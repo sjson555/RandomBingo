@@ -11,17 +11,32 @@ var computerChoice = Int.random(in: 1...100)
 
 var myChoice: Int = 0
 
-// var userInput: String? 옵셔널 스트링이므로 숫자로 변환 해야함
-var userInput = readLine()
-
-// 옵셔널 string -> string
-if let input = userInput {
+while true {
     
-    // 옵셔널 int -> int
-    if let number = Int(input) {
+    // var userInput: String? 옵셔널 스트링이므로 숫자로 변환 해야함
+    var userInput = readLine()
+    
+    // 옵셔널 string -> string
+    if let input = userInput {
         
-        // myChoice에 입력값
-        myChoice = number
-        
+        // 옵셔널 int -> int
+        if let number = Int(input) {
+            
+            // myChoice에 입력값
+            myChoice = number
+            
+        }
+    }
+    
+    // print(myChoice)
+    
+    if computerChoice > myChoice {
+        print("Up")
+    } else if computerChoice < myChoice {
+        print("Down")
+    } else {
+        print("Bingo")
+        // 반복문 종료
+        break
     }
 }
