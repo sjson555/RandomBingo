@@ -4,6 +4,11 @@
 //
 //  Created by 손성준 on 7/11/24.
 //
-
+// ⌥+클릭 하면 타입 확인 가능
 import Foundation
 
+var computerChoice = Int.random(in: 1...100)
+
+var myChoice: Int = 0
+// var userInput: String? 옵셔널 스트링
+var userInput = readLine()
