@@ -10,24 +10,22 @@ import Foundation
 var computerChoice = Int.random(in: 1...100)
 
 var myChoice: Int = 0
-
+// 반복문 (조건에 따른 반복문 실행)
 while true {
-    
     // var userInput: String? 옵셔널 스트링이므로 숫자로 변환 해야함
     var userInput = readLine()
     
-    // 옵셔널 string -> string
-    if let input = userInput {
-        
-        // 옵셔널 int -> int
-        if let number = Int(input) {
-            
-            // myChoice에 입력값
-            myChoice = number
-            
-        }
+    // 옵셔널 string -> string / // 옵셔널 int -> int
+//    if let input = userInput, let number = Int(input) {
+//        // myChoice에 입력값
+//        myChoice = number
+//    }
+    guard let input = userInput, let number = Int(input) else {
+        print("error")
+        break
     }
-    
+    myChoice = number
+
     // print(myChoice)
     
     if computerChoice > myChoice {
